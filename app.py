@@ -12,14 +12,16 @@ if __name__=='__main__':
     try:
         while True:
             new_ads = main()
+            print('======== CHECK FOR NEW ADS =========')
 
             if len(new_ads) > 0:
                 from bot.loader import dp
                 from bot.utils.notify_admins import send_info
                 for car in new_ads:
                     asyncio.run(send_info(dp,car))
+                    time.sleep(2)
 
-            time.sleep(120)
+            time.sleep(10)
 
 
     except KeyboardInterrupt:

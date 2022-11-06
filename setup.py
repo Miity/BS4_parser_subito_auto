@@ -5,5 +5,5 @@ setup(
    version='0.1.0',
    author='Dmytro Andreiuk',
    author_email='Andreiuk_Dmytro@gmail.com',
-   packages=['app', 'utils', 'bot'],
+   packages=['app', 'bot'],
 )
