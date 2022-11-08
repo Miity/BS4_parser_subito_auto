@@ -13,12 +13,17 @@ class Car:
 
     def print_info(self) -> None:
         return f'\
-            \nCar_id: {self.car_id} \
+            \nId: {self.car_id} \
             \nTitle: {self.title or None} \
             \nPrice: {self.price or None} \
-            \nkm: {self.km[0] or None} \
-            \nURL: {self.url} \
-            \nUpdate date: {self.update}'
+            \nURL: {self.url} '
+        # return f'\
+        #     \nCar_id: {self.car_id} \
+        #     \nTitle: {self.title or None} \
+        #     \nPrice: {self.price or None} \
+        #     \nkm: {self.km[0] or None} \
+        #     \nURL: {self.url} \
+        #     \nUpdate date: {self.update}'
 
 class newCar:
     pass

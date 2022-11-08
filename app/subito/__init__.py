@@ -36,17 +36,17 @@ def fetch_ads(session: Session, url) -> Set[Car]:
             car.title =item.find_all('h2')[0].text or None
             car.price = item.find(class_='price').text or None
             car.url = item.find('a', href=True)['href'] or None
-            car.km = item.find_all(text=re.compile('Km')) or None
-            update_class = 'index-module_sbt-text-atom__ed5J9 index-module_token-caption__TaQWv index-module_size-small__XFVFl index-module_weight-semibold__MWtJJ index-module_date__Fmf-4 index-module_with-spacer__UNkQz'
+            # car.km = item.find_all(text=re.compile('Km')) or None
+            # update_class = 'index-module_sbt-text-atom__ed5J9 index-module_token-caption__TaQWv index-module_size-small__XFVFl index-module_weight-semibold__MWtJJ index-module_date__Fmf-4 index-module_with-spacer__UNkQz'
             if car.url:
                 car.car_id = str(car.url).split('-')[-1].split('.')[0]
 
-            try:
-                car.update = item.find('span', class_=update_class).text
-            except :
-                # logger.exception('=== Error during parsing a price ===')
-                car.update = None
-                # continue
+            # try:
+            #     car.update = item.find('span', class_=update_class).text
+            # except :
+            #     # logger.exception('=== Error during parsing a price ===')
+            #     car.update = None
+            #     # continue
             
             ads.append(car)
     
