@@ -8,19 +8,19 @@ import asyncio
 
 if __name__=='__main__':
     start_time = time.time()
-    
+    i=0
     try:
         while True:
             new_ads = main()
             print('======== CHECK FOR NEW ADS =========')
-
-            if len(new_ads) > 0:
+            
+            if len(new_ads) > 0 and i>0:
                 from bot.loader import dp
                 from bot.utils.notify_admins import send_info
                 for car in new_ads:
                     asyncio.run(send_info(dp,car))
                     time.sleep(2)
-
+            i+=1
             time.sleep(600)
 
 
