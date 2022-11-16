@@ -21,7 +21,7 @@ if __name__=='__main__':
                     asyncio.run(send_info(dp,car))
                     time.sleep(2)
 
-            time.sleep(10)
+            time.sleep(600)
 
 
     except KeyboardInterrupt:
