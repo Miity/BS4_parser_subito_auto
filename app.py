@@ -1,28 +1,27 @@
 import time
-
 from app.config import logger
 from app import main
-
 import asyncio
+
+from bot.loader import dp
+from bot.utils.notify_admins import send_info
 
 
 if __name__=='__main__':
     start_time = time.time()
-    i=0
     try:
+        i=0
         while True:
+            logger.info(f'======== LOOP NUMBER: {i} =========')
+            logger.info('======== CHECK FOR NEW ADS =========')
             new_ads = main()
-            print('======== CHECK FOR NEW ADS =========')
-            
-            if len(new_ads) > 0 and i>0:
-                from bot.loader import dp
-                from bot.utils.notify_admins import send_info
-                for car in new_ads:
+            logger.info(f'======== found {len(new_ads)} new ads =========')
+            for car in new_ads:
+                if i>0:
                     asyncio.run(send_info(dp,car))
-                    time.sleep(2)
+                    time.sleep(4)
             i+=1
             time.sleep(600)
-
 
     except KeyboardInterrupt:
         logger.info('=== Script has been stopped manually! ===')

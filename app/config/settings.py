@@ -6,8 +6,7 @@ env.read_env()
 
 class Settings:
     DEFAULT_USER_AGENT = env.str('DEFAULT_USER_AGENT',
-                                 default='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
-                                         '(KHTML, like Gecko) Chrome/61.0.3163.91 Safari/537.36')
+                                 default='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15')
     CLIENT_ID = env.str('CLIENT_ID')
     CLIENT_SECRET = env.str('CLIENT_SECRET')
 
